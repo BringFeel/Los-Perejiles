@@ -2057,7 +2057,7 @@ input, select, textarea {
 		background: #df7366;
 		color: #fff;
 		text-align: center;
-		border-radius: 0.5em;
+		border-radius: 10em;
 		text-decoration: none;
 		padding: 0.65em 3em 0.65em 3em;
 		border: 0;
@@ -3189,7 +3189,7 @@ button {
 button::before {
     content: '';
     width: 0;
-    height: 300%;
+    height: 1000%;
     position: absolute;
     top: 50%;
     left: 50%;
