@@ -1796,8 +1796,9 @@ input, select, textarea {
 
 		.image.featured {
 			display: block;
-			width: 100%;
+			width: 60%;
 			margin: 0 0 4em 0;
+			margin-left: 20%;
 		}
 
 		.image.left {
@@ -2797,6 +2798,7 @@ input, select, textarea {
 
 			.image.featured {
 				margin: 0 0 2em 0;
+				width: 100%;
 			}
 
 			.image.left {
