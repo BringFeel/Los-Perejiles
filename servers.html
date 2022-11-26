@@ -114,7 +114,15 @@
 								El modo de Juego que se encuentra en este servidor es casual, como una partida normal en lan con los pibes, nada más que con unos mapas flasheros, clásicos y un par de bobadas más.
 							</p>
 							<div id="cosopiola">
-							<button onclick="copy(this)" id="botonip">Copiar IP</button>
+								<button onclick="copy(this)" id="botonip">Copiar IP</button>
+							</div>
+						</br>
+							<a href="https://www.gametracker.com/server_info/perejiles.bringfeel.com:27015/" class="image featured" target="_blank"><img src="https://cache.gametracker.com/server_info/perejiles.bringfeel.com:27015/b_560_95_1.png" alt="" /></a>
+							<p>
+								El modo de Juego que se encuentra en este servidor es deathmatch, si sos medio manco y moris a cada rato reapareces al toque.
+							</p>
+							<div id="cosopiola">
+							<button onclick="copycsgo(this)" id="botonip">Copiar IP</button>
 							<div class="copyright" style="padding-top: 15px;">
 								<ul class="menu">
 									<li>&copy; Los Perejiles 2022</li>
@@ -178,6 +186,15 @@
 					var inp =document.createElement('input');
 					document.body.appendChild(inp)
 					inp.value = "perejiles.bringfeel.com:27060";
+					inp.select();
+					document.execCommand('copy',false);
+					inp.remove();
+				}
+
+				function copycsgo(that){
+					var inp =document.createElement('input');
+					document.body.appendChild(inp)
+					inp.value = "perejiles.bringfeel.com:27015";
 					inp.select();
 					document.execCommand('copy',false);
 					inp.remove();
