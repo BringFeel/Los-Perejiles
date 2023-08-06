@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="https://losperejiles.com.ar/imagenes/LosPerejiles-2023-v2-LGBT.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Perejiles - Server Connector</title>
+</head>
+
+<style>
+    @font-face {
+    font-family: upheavtt;
+    src: url(https://losperejiles.com.ar/assets/css/upheavtt.ttf);
+    }
+
+    body, html {
+        background-color: black;
+    }
+
+    #centro {
+        padding-top: 20%;     
+        font-family: upheavtt;
+        text-align: center;
+    }
+
+    #ip {
+        color: aqua;
+        font-size: 30px;
+    }
+
+    #message {
+        font-size: 50px;
+        color: rgb(212, 0, 255);
+    }
+</style>
+
+<body>
+    
+   <div id="centro">
+    <h1 id="message">Conectando al Servidor</h1>
+    <p id="ip"></p>
+   </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const valor = urlParams.get('ip');
+
+    $('#ip').text(valor);
+
+    function redirectToURL() {
+      window.location.href = "steam://connect/" + valor;
+    }
+
+    setTimeout(redirectToURL, 3000);
+
+    console.log("Ta funcionando joya? " + valor + ", Si")
+
+</script>
+</html>
