@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://losperejiles.com.ar/imagenes/LosPerejiles-2023-v2-LGBT.png" type="image/x-icon" />
+
+    <meta name="description" content="Página del estado actual de los servidores de Los Perejiles.">
+    <meta name="keywords" content="cs, 1.6, cs1.6, counter, strike, counter strike, counter strike 1.6, argentina, latam, arg, los pibes, Los Perejiles, lp, los perejiles, perejiles, puteadas, casual, chill, para viciar con los pibes">
+    <meta name="theme-color" content="#ee00ff">
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://losperejiles.com.ar/status">
+    <meta property="og:title" content="Los Perejiles • Estado de los Servidores">
+    <meta property="og:description" content="Página del estado actual de los servidores de Los Perejiles.">
+    <meta property="og:image" content="https://losperejiles.com.ar/imagenes/LosPerejiles-2023-v2-LGBT.png">
+    <meta property="twitter:url" content="https://losperejiles.com.ar/status">
+    <meta property="twitter:title" content="Los Perejiles • Estado de los Servidores">
+    <meta property="twitter:description" content="Página del estado actual de los servidores de Los Perejiles.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://losperejiles.com.ar/assets/css/main.css" />
+    <title>Los Perejiles • Estado de los Servidores</title>
+</head>
+
+<style>
+
+    body {
+        background-color: #002260;
+    }
+
+    #serverTable {
+        text-align: center;
+    }
+
+    #centro {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <section id="servidores" class="wrapper style1 special">
+        <div class="inner">
+        <header class="major">
+        <h2 style="font-size: 5vw;padding: 0;">ESTADO DE LOS SERVIDORES</h2>
+        <p>Los Jugadores online de los Servidores de Minecraft pueden <b>NO</b> ser correctos debido a la información colocada en el apartado de jugadores junto al motd.</p>
+        </header>
+        <div class="table-wrapper" id="aaaa">
+            <table id="serverTable">
+                <thead>
+                    <tr>
+                        <th id="centro">Servidor</th>
+                        <th id="centro">Juego</th>
+                        <th id="centro">Jugadores en línea</th>
+                        <th id="centro">En línea</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const serverTable = document.getElementById("serverTable").getElementsByTagName("tbody")[0];
+    const loadingRow = serverTable.insertRow();
+    const loadingCell = loadingRow.insertCell(0);
+    loadingCell.colSpan = 5;
+    loadingCell.textContent = "Solicitando datos a la API...";
+
+    fetch("http://rest-apis.losperejiles.com.ar:7478/servers") // Reemplaza "URL_DE_TU_API_JSON" con la URL real de tu API
+    .then(response => response.json())
+        .then(data => {
+            serverTable.removeChild(loadingRow); // Eliminar la fila de carga
+            data.forEach(server => {
+                const row = serverTable.insertRow();
+                
+                row.insertCell(0).textContent = server.name;
+                row.insertCell(1).textContent = server.type;
+                row.insertCell(2).textContent = server.playersOnline + "/" + server.maxPlayers;
+                row.insertCell(3).textContent = server.online ? "🟢" : "🔴";
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+});
+
+
+</script>
+</body>
+</html>
