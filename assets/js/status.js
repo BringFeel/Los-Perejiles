@@ -17,9 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 row.insertCell(2).textContent = server.playersOnline + "/" + server.maxPlayers;
                 row.insertCell(3).textContent = server.map;
                 row.insertCell(4).textContent = server.online ? "🟢" : "🔴";
-            });
-            const lastupdate = document.getElementById('lastupdate');
+
+                const lastupdate = document.getElementById('lastupdate');
                 lastupdate.textContent = server.lastUpdateTime;
+            });
         })
         .catch(error => console.error("Error fetching data:", error));
 });
