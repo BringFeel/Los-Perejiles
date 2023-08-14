@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingCell.colSpan = 5;
     loadingCell.textContent = "Solicitando datos a la API...";
 
-    fetch("http://rest-apis.losperejiles.com.ar:7478/servers") // Reemplaza "URL_DE_TU_API_JSON" con la URL real de tu API
+    fetch("https://4efd-190-13-241-208.ngrok-free.app/servers") // Reemplaza "URL_DE_TU_API_JSON" con la URL real de tu API
     .then(response => response.json())
         .then(data => {
             serverTable.removeChild(loadingRow); // Eliminar la fila de carga
