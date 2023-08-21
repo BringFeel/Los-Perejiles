@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const totalRow = serverTable.insertRow();
             const totalCell = totalRow.insertCell(0);
             totalCell.colSpan = 5;
-            totalCell.textContent = "Total jugadores en línea: " + totalOnlinePlayers;
+            totalCell.textContent = "Jugadores Totales en línea: " + totalOnlinePlayers;
         })
         .catch(error => console.error("Error fetching data:", error));
 });
