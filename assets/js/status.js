@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingCell.colSpan = 5;
     loadingCell.textContent = "Solicitando datos a la API...";
 
-    fetch("https://c45e-190-13-241-208.ngrok-free.app/servers") 
+    fetch("https://ee1d-190-13-241-208.ngrok-free.app/servers") 
     .then(response => response.json())
         .then(data => {
             serverTable.removeChild(loadingRow); // Eliminar la fila de carga
