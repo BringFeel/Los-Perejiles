@@ -3938,7 +3938,6 @@ input, select, textarea {
 
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
-		background-image: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -3950,6 +3949,7 @@ input, select, textarea {
 
 	::-webkit-scrollbar {
 		width: 10px;
+		height: 9px;
 	  }
 	  
 	  ::-webkit-scrollbar-track {
