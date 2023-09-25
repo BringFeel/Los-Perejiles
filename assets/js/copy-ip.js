@@ -1,6 +1,15 @@
 //Ya se que el código es horrible. Pueden cuestionar mis métodos pero no mis resultados
 
-      function copy(that){
+                       function copy(that){
+				var inp =document.createElement('input');
+				document.body.appendChild(inp)
+				inp.value = "cs.losperejiles.com.ar:27070";
+				inp.select();
+				document.execCommand('copy',false);
+				inp.remove();
+			}
+
+                       function copy1(that){
 				var inp =document.createElement('input');
 				document.body.appendChild(inp)
 				inp.value = "cs.losperejiles.com.ar:27060";
@@ -67,15 +76,6 @@
 				var inp =document.createElement('input');
 				document.body.appendChild(inp)
 				inp.value = "sentry.losperejiles.com.ar";
-				inp.select();
-				document.execCommand('copy',false);
-				inp.remove();
-			}
-
-	                function copy10(that){
-				var inp =document.createElement('input');
-				document.body.appendChild(inp)
-				inp.value = "cs.losperejiles.com.ar:27070";
 				inp.select();
 				document.execCommand('copy',false);
 				inp.remove();
