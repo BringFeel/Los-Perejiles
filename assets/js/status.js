@@ -22,7 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 row.insertCell(1).textContent = server.type;
                 row.insertCell(2).textContent = server.playersOnline + "/" + server.maxPlayers;
                 row.insertCell(3).textContent = server.map;
-                row.insertCell(4).textContent = server.online ? "🟢" : "🔴";
+                var statusinfo = row.insertCell(4);
+                statusinfo.textContent = server.online ? "🟢" : "🔴"
+                var statusTitle = server.online ? "Server Online" : "Server Offline";
+                statusinfo.setAttribute("title", statusTitle);
                 
                 totalOnlinePlayers += server.playersOnline; // Sumar jugadores en línea de este servidor al total
             });
