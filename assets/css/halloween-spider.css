@@ -1,0 +1,180 @@
+body {
+  background-color: #7c7c7c;
+  padding: 0;
+}
+
+.bg {
+  background-image: url("https://www.archerycircuit.com/wp-content/uploads/2016/12/grunge-background-14635619239LT-darken.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0.5;
+}
+
+/*/////////////////////// general ////*/
+/*/////////////////////// spider ////*/
+.container {
+  animation: spider-anima 12s ease-out;
+  animation-fill-mode: forwards;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+}
+@keyframes spider-anima {
+  0% {
+    top: -100px;
+  }
+  50% {
+    top: 65%;
+  }
+}
+.container .eye {
+  background-color: #fff;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+}
+.container .eye-right {
+  right: 6px;
+}
+.container .eye-left {
+  left: 6px;
+}
+
+.spider-web {
+  animation: spider-web-anima 6s ease-out;
+  animation-fill-mode: forwards;
+  background-color: #000;
+  border-radius: 4px;
+  height: 0;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 2px;
+}
+@keyframes spider-web-anima {
+  0% {
+    height: 0;
+    top: -100px;
+  }
+  100% {
+    height: 65vh;
+    top: 0;
+  }
+}
+
+.spider-body {
+  background-color: #000;
+  border-radius: 50%;
+  height: 20px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+}
+.spider-body:before {
+  content: "";
+  background-color: #000;
+  border-radius: 50%;
+  height: 15px;
+  left: 2.5px;
+  position: absolute;
+  top: -5px;
+  width: 15px;
+  z-index: -99;
+}
+
+.right {
+  transform: rotateY(180deg);
+}
+
+.arm-container .arm {
+  background-color: #000;
+  border-radius: 4px;
+  height: 4px;
+  position: absolute;
+  transform-origin: center left;
+  width: 30px;
+}
+.arm-container .A {
+  animation: A-anima 3s infinite ease-in-out;
+  transform: rotate(75deg);
+}
+@keyframes A-anima {
+  0% {
+    transform: rotate(75deg);
+  }
+  50% {
+    transform: rotate(-70deg);
+  }
+}
+.arm-container .A:nth-child(2) {
+  animation-delay: -0.2s;
+}
+.arm-container .A:nth-child(3) {
+  animation-delay: -0.5s;
+}
+.arm-container .A:nth-child(4) {
+  animation-delay: -0.4s;
+}
+.arm-container .B {
+  animation: B-anima 3s infinite ease-in-out;
+  left: calc(100% - 2px);
+  transform: rotate(10deg);
+}
+@keyframes B-anima {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(120deg);
+  }
+  80% {
+    transform: rotate(20deg);
+  }
+}
+.arm-container .C {
+  animation: C-anima 3s infinite ease-in-out;
+  left: calc(100% - 2px);
+  transform: rotate(10deg);
+}
+@keyframes C-anima {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+/*/////////////////////// shadow ////*/
+.shadow {
+  left: calc(50% + 10px);
+  background-color: rgba(45, 45, 45, 0.5);
+}
+
+.shadow .arm {
+  background-color: rgba(45, 45, 45, 0.5);
+}
+
+.shadow-body {
+  background-color: rgba(45, 45, 45, 0.5);
+}
+.shadow-body:before {
+  background-color: rgba(45, 45, 45, 0.5);
+}
+.shadow-body .eye {
+  display: none;
+}

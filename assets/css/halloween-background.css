@@ -1,0 +1,598 @@
+/* Creador original - https://codepen.io/code2rithik/pen/eYEEQJz */
+
+body {
+  background: radial-gradient(circle at center, #666, #222);
+}
+body:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-mask: url("data:image/png;base64,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");
+          mask: url("data:image/png;base64,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");
+  background: #000;
+  opacity: 0.25;
+  -webkit-animation: static 0.4s steps(4, end) infinite;
+          animation: static 0.4s steps(4, end) infinite;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+@-webkit-keyframes static {
+  to {
+    -webkit-mask-position: 500px 1500px;
+            mask-position: 500px 1500px;
+  }
+}
+@keyframes static {
+  to {
+    -webkit-mask-position: 500px 1500px;
+            mask-position: 500px 1500px;
+  }
+}
+body #wrap {
+  width: 600px;
+  height: 50px;
+  max-width: 100%;
+  position: relative;
+}
+body #wrap .signup, body #wrap .field {
+  position: relative;
+  z-index: 10;
+}
+body #wrap .field {
+  position: absolute;
+  pointer-events: none;
+  height: 50px;
+  top: 0;
+  left: 0;
+  width: calc(100% - 200px);
+  background: transparent;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 22px;
+  line-height: 1;
+  text-transform: uppercase;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  z-index: 2;
+  transition: 0.4s ease-in-out;
+  transition-delay: 0.6s;
+}
+body #wrap .field:after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 200px);
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  transition-delay: 2s;
+}
+body #wrap .field .graves {
+  width: 300px;
+  position: absolute;
+  height: 10px;
+  top: calc(50% - 10px);
+  left: calc(50% - 50px);
+  background: repeating-linear-gradient(78deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px), repeating-linear-gradient(60deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px) -5px 50%, repeating-linear-gradient(84deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px) -9px 50%, repeating-linear-gradient(71deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px) -12px 50%, repeating-linear-gradient(101deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px) -14px 50%, repeating-linear-gradient(110deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px) -2px 50%, repeating-linear-gradient(68deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px) 5px 50%, repeating-linear-gradient(94deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px) -18px 50%, repeating-linear-gradient(114deg, #9ecb62 1px, rgba(255, 255, 255, 0.0001) 1px, rgba(255, 255, 255, 0.0001) 15px, #9ecb62 15px, #9ecb62 16px) -2px 50%, linear-gradient(to top, #92c54f, rgba(255, 255, 255, 0.0001) 7.5px);
+  z-index: 999;
+  transform: scaleX(0);
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: 0.9s;
+  border-radius: 100px 100px 0 0;
+}
+body #wrap .field .graves:after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 50px;
+  top: 100%;
+  left: 50%;
+  background: linear-gradient(to bottom, #92c54f 2.5px, #5a5002 10px, #282401 20px, rgba(255, 255, 255, 0.0001));
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.5s;
+  transform-origin: top;
+  transform: translateX(-50%) scaleY(0);
+  -webkit-mask: linear-gradient(to right, rgba(255, 255, 255, 0.0001), #000 15%, #000 85%, rgba(255, 255, 255, 0.0001));
+          mask: linear-gradient(to right, rgba(255, 255, 255, 0.0001), #000 15%, #000 85%, rgba(255, 255, 255, 0.0001));
+}
+body #wrap .field .graves:first-of-type .ghost {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -125px;
+  left: 100px;
+  overflow: hidden;
+  transform-origin: left;
+  transform: scale(0.75);
+}
+body #wrap .field .graves:first-of-type .ghost .ghostbody {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg);
+  transition: 0.5s ease-in-out;
+  transform-origin: 0% 0%;
+}
+body #wrap .field .graves:first-of-type .ghost .ghostbody:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  top: -70px;
+  left: -85px;
+  border: 35px solid;
+  border-color: rgba(255, 255, 255, 0.0001) #fff rgba(255, 255, 255, 0.0001) rgba(255, 255, 255, 0.0001);
+  border-radius: 100%;
+  transform: rotate(45deg);
+  -webkit-mask: linear-gradient(to top, rgba(255, 255, 255, 0.0001) 25%, #000 50%);
+          mask: linear-gradient(to top, rgba(255, 255, 255, 0.0001) 25%, #000 50%);
+}
+body #wrap .field .graves:first-of-type .ghost .ghostbody:after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle at center, #000 2px, rgba(255, 255, 255, 0.0001) 2px) 50% 50%/100% 100% no-repeat, radial-gradient(circle at center, #000 2px, rgba(255, 255, 255, 0.0001) 2px) calc(50% + 12.5px) 50%/100% 100% no-repeat, #fff;
+  border-radius: 100%;
+  left: 50px;
+  top: 0;
+  z-index: 2;
+  -webkit-animation: look 3s ease-in-out infinite alternate;
+          animation: look 3s ease-in-out infinite alternate;
+}
+@-webkit-keyframes look {
+  from {
+    background-position: 50% 50%, calc(50% + 12.5px) 50%, 50% 50%;
+  }
+  to {
+    background-position: calc(50% - 12.5px) 50%, 50% 50%, 50% 50%;
+  }
+}
+@keyframes look {
+  from {
+    background-position: 50% 50%, calc(50% + 12.5px) 50%, 50% 50%;
+  }
+  to {
+    background-position: calc(50% - 12.5px) 50%, 50% 50%, 50% 50%;
+  }
+}
+body #wrap .field .graves .grave {
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  bottom: 2px;
+  left: 25px;
+  overflow: hidden;
+  z-index: 2;
+}
+body #wrap .field .graves .grave:before, body #wrap .field .graves .grave:after {
+  content: "THANK";
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  background: #ccc;
+  border-radius: 100px 100px 0 0;
+  transform-origin: bottom;
+  bottom: 0;
+  right: 0;
+  box-shadow: -10px 5px 0 0 #666;
+  transition: 0.75s ease-in-out;
+  transition-delay: 0.3s;
+  transform: skewX(5deg) translateY(100%);
+}
+body #wrap .field .graves .grave:last-of-type {
+  width: 150px;
+  height: 200px;
+  left: 150px;
+}
+body #wrap .field .graves .grave:last-of-type:before, body #wrap .field .graves .grave:last-of-type:after {
+  transition: 0.9s ease-in-out;
+  transition-delay: 0.3s;
+}
+body #wrap .field .graves .grave:last-of-type:before, body #wrap .field .graves .grave:last-of-type:after {
+  content: "YOU";
+  right: auto;
+  left: 25%;
+  padding-bottom: 55px;
+  border-radius: 0px;
+  box-shadow: none;
+  width: 60%;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.0001) 30%, #ccc 30%, #ccc 65%, rgba(255, 255, 255, 0.0001) 65%), linear-gradient(to bottom, rgba(255, 255, 255, 0.0001) 25%, #ccc 25%, #ccc 45%, rgba(255, 255, 255, 0.0001) 45%);
+  padding-right: 5px;
+  transform: skewX(-5deg) translateY(250px);
+  height: 75%;
+}
+body #wrap .field .graves .grave:last-of-type:after {
+  color: rgba(255, 255, 255, 0.0001);
+  left: 30%;
+  bottom: -5%;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+body #wrap .field .btn {
+  width: 200px;
+  height: 50px;
+  right: -200px;
+  position: absolute;
+  background: #000;
+  top: 0;
+  pointer-events: none;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+  padding-bottom: 2.5px;
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out, background 0.2s ease-in-out;
+  transition-delay: 1.6s, 0s;
+  transform-origin: right;
+  transform-style: preserve-3d;
+}
+body #wrap .field .btn:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  -webkit-backdrop-filter: blur(2px) contrast(20) brightness(0.65);
+          backdrop-filter: blur(2px) contrast(20) brightness(0.65);
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+body #wrap .field .btn > span {
+  color: #fff;
+  display: inline-block;
+  transform: scaleY(1.35);
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.175), color 0.2s ease-in-out;
+  transition-delay: 2.15s, 0s;
+}
+body #wrap .field .btn > span:before, body #wrap .field .btn > span:after {
+  content: "SUBSCRIBE";
+  position: absolute;
+  color: #c20000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;
+  z-index: -1;
+}
+body #wrap .field .inner {
+  position: absolute;
+  width: var(--width);
+  height: 100%;
+  background: #fff;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease-in-out, -webkit-clip-path 0.3s ease-in-out;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease-in-out, clip-path 0.3s ease-in-out;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease-in-out, clip-path 0.3s ease-in-out, -webkit-clip-path 0.3s ease-in-out;
+  transition-delay: 0.75s, 0.5s, 1.5s;
+  transform-origin: bottom;
+  transform: rotateX(0deg);
+  perspective: 800px;
+  overflow: hidden;
+  -webkit-clip-path: polygon(-1% -1%, 101% -1%, 101% 101%, -1% 101%);
+          clip-path: polygon(-1% -1%, 101% -1%, 101% 101%, -1% 101%);
+}
+body #wrap .field .inner:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  box-shadow: inset 0 0 0 1px;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease-in-out;
+}
+body #wrap .field.haunt {
+  transform: translateY(50px);
+  transition-delay: 3.25s;
+}
+body #wrap .field.haunt:after {
+  opacity: 0;
+  transition-delay: 0s;
+}
+body #wrap .field.haunt .graves {
+  transition-delay: 3.65s;
+  transform: scaleX(1);
+  -webkit-animation: shake 0.05s linear 20 alternate 3.75s;
+          animation: shake 0.05s linear 20 alternate 3.75s;
+}
+body #wrap .field.haunt .graves:after {
+  transition: 0.8s ease-in-out;
+  transition-delay: 3.65s;
+  transform: translateX(-50%) scaleY(1);
+}
+body #wrap .field.haunt .graves .ghost .ghostbody {
+  transition-delay: 4.75s;
+  transform: rotate(0deg);
+}
+@-webkit-keyframes shake {
+  from {
+    transform: scaleX(1) translateX(-1px);
+  }
+  to {
+    transform: scaleX(1) translateX(1px);
+  }
+}
+@keyframes shake {
+  from {
+    transform: scaleX(1) translateX(-1px);
+  }
+  to {
+    transform: scaleX(1) translateX(1px);
+  }
+}
+body #wrap .field.haunt .graves .grave:before {
+  transform: skewX(5deg) translateY(0%);
+  transition-delay: 4s;
+}
+body #wrap .field.haunt .graves .grave:last-of-type:before, body #wrap .field.haunt .graves .grave:last-of-type:after {
+  transform: skewX(-5deg) translateY(10px);
+  transition-delay: 4.25s;
+}
+body #wrap .field.haunt .btn {
+  transition-delay: 0.6s;
+  transform: scaleX(0);
+}
+body #wrap .field.haunt .btn:before {
+  opacity: 1;
+}
+body #wrap .field.haunt .btn > span {
+  transition-delay: 0.2s, 0s;
+  transform: scaleY(1.35) translateY(30px);
+  color: #c20000;
+}
+body #wrap .field.haunt .btn > span:before, body #wrap .field.haunt .btn > span:after {
+  transform: translate(-50%, calc(-50% + 30px));
+  transition-delay: 0s, 0s;
+  opacity: 1;
+}
+body #wrap .field.haunt .btn > span:after {
+  transform: translate(-50%, calc(-50% + 50px));
+  transition-delay: 0.1s, 0s;
+}
+body #wrap .field.haunt .inner {
+  background: #282401;
+  transform: rotateX(45deg) scaleY(1.75) translateX(calc(300px - var(--width)/2));
+  transition: 1s ease-in-out, background 0.45s ease-in-out, -webkit-clip-path 0.35s ease-in-out;
+  transition-delay: 0.75s, 0.7s, 3.35s;
+  -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+          clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+}
+body #wrap .field.haunt .inner:before {
+  transform: rotateX(-60deg);
+  background: #0f0d00;
+  box-shadow: inset 0 0 10px 1px black;
+  transition-delay: 1.05s, 0.95s;
+}
+body #wrap .field.haunt p .word {
+  -webkit-animation: shift 0.75s ease-in-out 1 forwards 0.15s;
+          animation: shift 0.75s ease-in-out 1 forwards 0.15s;
+}
+body #wrap .field.haunt p .word:after {
+  display: none;
+}
+@-webkit-keyframes shift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(300px - var(--width)/2));
+  }
+}
+@keyframes shift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(300px - var(--width)/2));
+  }
+}
+body #wrap .field.haunt p .word .char {
+  filter: brightness(1);
+  -webkit-animation: fill 2s ease-in-out 1 forwards, drop 0.5s ease-in-out 1 forwards;
+          animation: fill 2s ease-in-out 1 forwards, drop 0.5s ease-in-out 1 forwards;
+  transform: scaleY(1.25) translateY(5px);
+}
+body #wrap .field.haunt p .word .char:nth-of-type(1n) {
+  transition-delay: 0.85s;
+  -webkit-animation-delay: 0.85s, 2.6s;
+          animation-delay: 0.85s, 2.6s;
+}
+body #wrap .field.haunt p .word .char:nth-of-type(1n):before {
+  transition-delay: 0.85s;
+  -webkit-animation-delay: 0.85s, 2.35s;
+          animation-delay: 0.85s, 2.35s;
+}
+body #wrap .field.haunt p .word .char:nth-of-type(2n) {
+  transition-delay: 0.95s;
+  -webkit-animation-delay: 0.95s, 2.7s;
+          animation-delay: 0.95s, 2.7s;
+}
+body #wrap .field.haunt p .word .char:nth-of-type(2n):before {
+  transition-delay: 0.95s;
+  -webkit-animation-delay: 0.95s, 2.45s;
+          animation-delay: 0.95s, 2.45s;
+}
+body #wrap .field.haunt p .word .char:nth-of-type(3n) {
+  transition-delay: 1.05s;
+  -webkit-animation-delay: 1.05s, 2.8s;
+          animation-delay: 1.05s, 2.8s;
+}
+body #wrap .field.haunt p .word .char:nth-of-type(3n):before {
+  transition-delay: 1.05s;
+  -webkit-animation-delay: 1.05s, 2.55s;
+          animation-delay: 1.05s, 2.55s;
+}
+body #wrap .field.haunt p .word .char:nth-of-type(4n) {
+  transition-delay: 1.15s;
+  -webkit-animation-delay: 1.15s, 2.9s;
+          animation-delay: 1.15s, 2.9s;
+}
+body #wrap .field.haunt p .word .char:nth-of-type(4n):before {
+  transition-delay: 1.15s;
+  -webkit-animation-delay: 1.15s, 2.65s;
+          animation-delay: 1.15s, 2.65s;
+}
+body #wrap .field.haunt p .word .char:before {
+  -webkit-animation: fill 2s ease-in-out 1 forwards, drop 3s ease-in-out 1 forwards;
+          animation: fill 2s ease-in-out 1 forwards, drop 3s ease-in-out 1 forwards;
+}
+@-webkit-keyframes drop {
+  to {
+    transform: translateY(100px);
+  }
+}
+@keyframes drop {
+  to {
+    transform: translateY(100px);
+  }
+}
+body #wrap .field p {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 2.5px 20px 0;
+  overflow: hidden;
+}
+body #wrap .field p:not(.initial) .word {
+  position: relative;
+}
+body #wrap .field p:not(.initial) .word:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 25px;
+  top: 50%;
+  left: 105%;
+  background: #666;
+  transform: translateY(calc(-50% - 3.5px));
+  -webkit-animation: blinking 1s steps(2, start) infinite;
+          animation: blinking 1s steps(2, start) infinite;
+}
+@-webkit-keyframes blinking {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes blinking {
+  to {
+    opacity: 0;
+  }
+}
+body #wrap .field p.text.initial .word {
+  position: relative;
+  z-index: 999;
+  -webkit-animation: fadeIn 0.5s ease-in-out 1 forwards 1s;
+          animation: fadeIn 0.5s ease-in-out 1 forwards 1s;
+  opacity: 0;
+}
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 0.25;
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 0.25;
+  }
+}
+body #wrap .field p.text.initial .word span.char {
+  background-image: linear-gradient(to bottom, #000, #000);
+}
+body #wrap .field p .word {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  transition: transform 0.6s ease-in-out;
+}
+body #wrap .field p .word .char {
+  width: auto;
+  max-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  overflow: hidden;
+  color: #fff;
+  position: relative;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom, #fff 50%, rgba(255, 255, 255, 0.0001) 50%);
+  background-size: 50% 200%;
+  background-position: 50% 100%;
+  transition: 0.6s ease-in-out;
+  transform-origin: bottom;
+  filter: brightness(0);
+}
+@-webkit-keyframes fill {
+  to {
+    background-position: 50% 0%;
+  }
+}
+@keyframes fill {
+  to {
+    background-position: 50% 0%;
+  }
+}
+body #wrap .field p .word .char:before {
+  content: attr(data-char);
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.0001) 50%, #c20000 50%, #c20000 54%, #9ecb62 54%, #78a938);
+  background-size: 50% 200%;
+  background-position: 50% 100%;
+  color: #9ecb62;
+  transform-origin: 50% 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scaleY(1.35);
+}
+body #wrap input {
+  height: 50px;
+  border: none;
+  width: calc(100% - 205px);
+  box-sizing: border-box;
+  padding: 0 20px;
+  outline: none;
+  font-size: 22px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+body #wrap input.submit {
+  width: 200px;
+  opacity: 0;
+}
+body #wrap input.submit:hover ~ .field:not(.haunt) .btn {
+  background: #222;
+}
+body #wrap input.email {
+  opacity: 0;
+}
