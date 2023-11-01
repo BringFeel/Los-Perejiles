@@ -2486,7 +2486,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #704000;
+			background-color: #9403b4;
 			box-shadow: none !important;
 			color: #ffffff !important;
 		}
@@ -2496,7 +2496,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #E78300 !important;
+				background-color: #d000ff !important;
 			}
 
 			input[type="submit"].primary:active,
@@ -2504,7 +2504,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #a15b00 !important;
+				background-color: #ff2fa8 !important;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2816,7 +2816,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #312817;
+			background-color: #002260;
 			color: #c8ece9;
 		}
 
@@ -2979,11 +2979,11 @@ input, select, textarea {
 		}
 
 		.wrapper.style69 {
-			background-color: #493b2170;
+			background-color: #5865f271;
 		}
 
 		.wrapper.style3 {
-			background-color: #493b21;
+			background-color: #272b86;
 			color: #d3d4e4;
 		}
 
@@ -3331,9 +3331,9 @@ input, select, textarea {
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
 		background: rgb(7,3,53);
-        background: -moz-linear-gradient(180deg, #4d2b0073 0%, #70400047 100%);
-        background: -webkit-linear-gradient(180deg, #4d2b0073 0%, #70400047 100%);
-        background: -webkit-linear-gradient(180deg, #4d2b0073 0%, #70400047 100%);
+        background: -moz-linear-gradient(180deg, rgba(7,3,53,1) 0%, rgba(7,3,53,0.48082983193277307) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(7,3,53,1) 0%, rgba(7,3,53,0.48082983193277307) 100%);
+        background: linear-gradient(180deg, rgba(7,3,53,1) 0%, rgba(7,3,53,0.48082983193277307) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#070335",endColorstr="#070335",GradientType=1);
 		color: #ffffff;
 		height: 100%;
@@ -3424,7 +3424,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
 		transition: background-color 0.2s ease;
-		background: #4d2b0073;
+		background: #0d1a43f0;
 		height: 3em;
 		left: 0;
 		line-height: 3em;
@@ -3578,10 +3578,10 @@ input, select, textarea {
 			position: relative;
 			z-index: 1;
 			font-family: upheavtt;
-			background: #E78300;
-			background: -moz-linear-gradient(179deg,#E78300 0%,#000000 100%);
-			background: -webkit-linear-gradient(179deg,#E78300 0%,#000000 100%);
-			background: linear-gradient(179deg,#E78300 0%,#000000 100%);
+			background: rgb(178,5,215);
+			background: -moz-linear-gradient(166deg, rgba(178,5,215,1) 0%, rgba(0,101,224,1) 100%);
+			background: -webkit-linear-gradient(166deg, rgba(178,5,215,1) 0%, rgba(0,101,224,1) 100%);
+			background: linear-gradient(166deg, rgba(178,5,215,1) 0%, rgba(0,101,224,1) 100%);
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b205d7",endColorstr="#0065e0",GradientType=1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -3926,7 +3926,7 @@ input, select, textarea {
 	}
 
 	body.landing #footer {
-		background-color: rgb(30 27 19 / 90%);
+		background-color: rgba(29, 36, 42, 0.9);
 	}
 
 	body.is-mobile.landing #page-wrapper {
@@ -3950,15 +3950,15 @@ input, select, textarea {
 	  }
 	  
 	  ::-webkit-scrollbar-track {
-		background: #260c0c; 
+		background: #0c0f26; 
 	  }
 	  
 	  ::-webkit-scrollbar-thumb {
 		background: rgb(255,0,0);
-		background: linear-gradient(159deg, #E78300 0%, #000000); 
+		background: linear-gradient(159deg, #b205d7 0%, rgba(0,101,224,1)); 
 	  }
 	  
 	  ::-webkit-scrollbar-thumb:hover {
 		background: rgb(121,0,0);
-		background: linear-gradient(159deg, #704000 0%, #000000);
+		background: linear-gradient(159deg, rgb(117, 3, 143) 0%, rgb(1, 60, 133));
 	  }
